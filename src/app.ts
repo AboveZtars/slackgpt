@@ -41,9 +41,9 @@ app.message("start summary", async ({message, client, say}) => {
     // Call conversations.history with the built-in client
     const resultChatHistory = await client.conversations.history({
       channel: message.channel,
-      limit: 500,
+      limit: 1000,
     });
-    console.log("History lenght", resultChatHistory.messages?.length);
+
     const resultUsersList = await client.users.list();
     const userList = resultUsersList.members;
     // Filter Results to find only messages sent by users
